@@ -12,6 +12,7 @@ export default function Header({ isScrolled, lang, setLang }: HeaderProps) {
 
   const navItems = [
     { id: 'about', en: 'About', vi: 'Giới thiệu' },
+    { id: 'current-projects', en: 'Now Building', vi: 'Đang làm' },
     { id: 'projects', en: 'Projects', vi: 'Dự án' },
     { id: 'skills', en: 'Skills', vi: 'Kỹ năng' },
     { id: 'timeline', en: 'Timeline', vi: 'Hành trình' },

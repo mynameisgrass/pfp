@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import CurrentProjects from '../components/CurrentProjects'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import Timeline from '../components/Timeline'
@@ -55,6 +56,7 @@ export default function Home() {
         <main className="relative z-10">
           <Hero lang={lang} />
           <About lang={lang} />
+          <CurrentProjects lang={lang} />
           <Projects lang={lang} />
           <Skills lang={lang} />
           <Timeline lang={lang} />

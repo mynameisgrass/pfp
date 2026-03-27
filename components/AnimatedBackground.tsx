@@ -3,14 +3,13 @@ import React from 'react'
 export default function AnimatedBackground() {
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full pointer-events-none"
+      className="forest-bg fixed top-0 left-0 w-full h-full pointer-events-none"
       style={{
         zIndex: 0,
         backgroundImage: 'url(/background.jpg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
       }}
     >
       {/* Fallback gradient if image doesn't load */}

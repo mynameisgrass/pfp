@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import type { Language } from '../pages/index'
 
-export default function Contact() {
+interface ContactProps {
+  lang: Language
+}
+
+export default function Contact({ lang }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,19 +55,19 @@ export default function Contact() {
       id="contact"
       className="relative py-20 px-6 max-w-7xl mx-auto"
     >
-      <h2 className="text-5xl font-bold gradient-text mb-12 text-center">
-        Get In Touch
+      <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">
+        {lang === 'vi' ? 'Liên hệ' : 'Get In Touch'}
       </h2>
 
       <div className="grid md:grid-cols-2 gap-12">
         <div className="contact-content">
           <h3 className="text-2xl font-bold text-primary mb-6">
-            Let&apos;s Build Something Amazing
+            {lang === 'vi' ? 'Cùng xây dựng điều tuyệt vời' : 'Let\'s Build Something Amazing'}
           </h3>
           <p className="text-nature mb-8 leading-relaxed">
-            Whether you want to discuss a new project, collaborate on something cool, or just chat
-            about coding, I&apos;m always open to connecting with fellow developers and enthusiasts.
-            Feel free to reach out!
+            {lang === 'vi'
+              ? 'Nếu bạn muốn trao đổi về dự án mới, hợp tác xây dựng sản phẩm hay chỉ đơn giản là nói chuyện về code, mình luôn sẵn sàng kết nối. Cứ liên hệ với mình!'
+              : 'Whether you want to discuss a new project, collaborate on something cool, or just chat about coding, I\'m always open to connecting with fellow developers and enthusiasts. Feel free to reach out!'}
           </p>
 
           <div className="space-y-6">
@@ -94,13 +99,13 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="card-glow p-8 rounded-xl backdrop-blur-sm space-y-6">
             <div>
               <label className="block text-sm font-medium text-nature mb-2">
-                Name
+                {lang === 'vi' ? 'Tên' : 'Name'}
               </label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Your name"
+                placeholder={lang === 'vi' ? 'Tên của bạn' : 'Your name'}
                 className="w-full px-4 py-3 rounded-lg bg-white/70 border border-primary/30 text-nature placeholder-nature/50 focus:outline-none focus:border-primary transition-colors"
                 required
               />
@@ -114,7 +119,7 @@ export default function Contact() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="your@email.com"
+                placeholder={lang === 'vi' ? 'email@cuaban.com' : 'your@email.com'}
                 className="w-full px-4 py-3 rounded-lg bg-white/70 border border-primary/30 text-nature placeholder-nature/50 focus:outline-none focus:border-primary transition-colors"
                 required
               />
@@ -122,12 +127,12 @@ export default function Contact() {
 
             <div>
               <label className="block text-sm font-medium text-nature mb-2">
-                Message
+                {lang === 'vi' ? 'Nội dung' : 'Message'}
               </label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Your message here..."
+                placeholder={lang === 'vi' ? 'Nhập nội dung tại đây...' : 'Your message here...'}
                 rows={5}
                 className="w-full px-4 py-3 rounded-lg bg-white/70 border border-primary/30 text-nature placeholder-nature/50 focus:outline-none focus:border-primary transition-colors resize-none"
                 required
@@ -138,12 +143,12 @@ export default function Contact() {
               type="submit"
               className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-dark font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all"
             >
-              Send Message
+              {lang === 'vi' ? 'Gửi tin nhắn' : 'Send Message'}
             </button>
 
             {submitted && (
               <div className="success-message text-center text-green-400 font-semibold">
-                ✨ Message received! I&apos;ll get back to you soon.
+                {lang === 'vi' ? '✨ Đã nhận tin! Mình sẽ phản hồi sớm.' : '✨ Message received! I\'ll get back to you soon.'}
               </div>
             )}
           </form>

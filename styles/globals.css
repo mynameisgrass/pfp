@@ -20,6 +20,18 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.forest-bg {
+  background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  .forest-bg {
+    background-attachment: fixed;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -77,6 +89,14 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  button:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-glow {
+    backdrop-filter: blur(3px);
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Language } from '../pages/index'
 
 const skills = {
   'Frontend Development': {
@@ -52,14 +53,18 @@ const programmingLanguages = [
   { name: 'HTML/CSS', level: 90 },
 ]
 
-export default function Skills() {
+interface SkillsProps {
+  lang: Language
+}
+
+export default function Skills({ lang }: SkillsProps) {
   return (
     <section
       id="skills"
       className="relative py-20 px-6 max-w-7xl mx-auto"
     >
-      <h2 className="text-5xl font-bold gradient-text mb-12 text-center">
-        Skills & Expertise
+      <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center">
+        {lang === 'vi' ? 'Kỹ năng & Chuyên môn' : 'Skills & Expertise'}
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -90,7 +95,7 @@ export default function Skills() {
       </div>
 
       <div className="card-glow p-8 rounded-xl backdrop-blur-sm">
-        <h3 className="text-2xl font-bold text-primary mb-8">Programming Languages</h3>
+        <h3 className="text-2xl font-bold text-primary mb-8">{lang === 'vi' ? 'Ngôn ngữ lập trình' : 'Programming Languages'}</h3>
         <div className="space-y-6">
           {programmingLanguages.map((lang, index) => (
             <div key={index}>

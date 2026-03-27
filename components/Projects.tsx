@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import type { Language } from '../pages/index'
 
 const projects = [
   {
@@ -77,7 +78,11 @@ const projects = [
   },
 ]
 
-export default function Projects() {
+interface ProjectsProps {
+  lang: Language
+}
+
+export default function Projects({ lang }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState(0)
 
   return (
@@ -85,14 +90,16 @@ export default function Projects() {
       id="projects"
       className="relative py-20 px-6 max-w-7xl mx-auto"
     >
-      <h2 className="text-5xl font-bold gradient-text mb-4 text-center">
-        Featured Projects
+      <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4 text-center">
+        {lang === 'vi' ? 'Dự án nổi bật' : 'Featured Projects'}
       </h2>
       <p className="text-center text-nature/80 mb-12 font-medium">
-        Peak: VNMap SafeSchool • ViSEF 2025-2026 2nd Prize • 200+ Python files • 75+ C++ solutions
+        {lang === 'vi'
+          ? 'Peak: VNMap SafeSchool • Giải Nhì ViSEF 2025-2026 • 200+ file Python • 75+ bài C++'
+          : 'Peak: VNMap SafeSchool • ViSEF 2025-2026 2nd Prize • 200+ Python files • 75+ C++ solutions'}
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -134,7 +141,7 @@ export default function Projects() {
                 onClick={(e) => e.stopPropagation()}
                 className="inline-flex mt-4 text-xs px-3 py-1 rounded-md bg-dark text-txthead hover:bg-darker transition-colors"
               >
-                Open Project
+                {lang === 'vi' ? 'Mở dự án' : 'Open Project'}
               </a>
             )}
           </div>
@@ -167,7 +174,7 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="inline-flex mt-6 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-txthead font-semibold hover:opacity-90 transition-opacity"
             >
-              Visit {projects[selectedProject].title}
+              {lang === 'vi' ? 'Truy cap' : 'Visit'} {projects[selectedProject].title}
             </a>
           )}
         </div>

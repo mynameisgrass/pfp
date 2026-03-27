@@ -1,6 +1,11 @@
 import React from 'react'
+import type { Language } from '../pages/index'
 
-export default function Hero() {
+interface HeroProps {
+  lang: Language
+}
+
+export default function Hero({ lang }: HeroProps) {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -16,20 +21,25 @@ export default function Hero() {
 
       <div className="relative text-center z-10">
         <div className="mb-6">
-          <h1 className="text-7xl md:text-8xl font-bold gradient-text mb-4">
-            Hey, I&apos;m
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold gradient-text mb-4 leading-tight">
+            {lang === 'vi' ? 'Xin chào, mình là' : 'Hey, I\'m'}
             <br />
             woospiegrassy
           </h1>
-          <p className="text-2xl md:text-3xl text-txthead glow font-semibold">
-            14-year-old builder • started coding at 11
+          <p className="text-xl md:text-3xl text-txthead glow font-semibold">
+            {lang === 'vi' ? '14 tuổi • bắt đầu lập trình từ năm 11 tuổi' : '14-year-old builder • started coding at 11'}
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-10">
-          <p className="text-lg text-nature leading-relaxed font-medium">
-            Full-Stack Developer | Reverse Engineer (HTTP requests & automation) | <br />
-            Arduino Learner | Competitive Programmer | VNMap Builder
+        <div className="max-w-3xl mx-auto mb-10 px-2">
+          <p className="text-base sm:text-lg text-nature leading-relaxed font-medium">
+            {lang === 'vi'
+              ? 'Lập trình viên Full-Stack | Reverse Engineer (HTTP request và automation) |'
+              : 'Full-Stack Developer | Reverse Engineer (HTTP requests & automation) |'}
+            <br />
+            {lang === 'vi'
+              ? 'Người học Arduino | Competitive Programmer | Người xây dựng VNMap'
+              : 'Arduino Learner | Competitive Programmer | VNMap Builder'}
           </p>
         </div>
 
@@ -38,13 +48,13 @@ export default function Hero() {
             onClick={() => scrollTo('projects')}
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all"
           >
-            View My Work
+            {lang === 'vi' ? 'Xem dự án' : 'View My Work'}
           </button>
           <button
             onClick={() => scrollTo('contact')}
             className="px-8 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary/10 font-bold transition-all"
           >
-            Contact Me
+            {lang === 'vi' ? 'Liên hệ' : 'Contact Me'}
           </button>
         </div>
 

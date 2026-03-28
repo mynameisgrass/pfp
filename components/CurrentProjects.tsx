@@ -14,7 +14,7 @@ const workingProjects = [
   },
   {
     name: 'vnmap-safeschool.net',
-    url: 'vnmap-safeschool.net',
+    url: 'https://vnmap-safeschool.net',
     descriptionEn: 'New Vietnamese map',
     descriptionVi: 'BDHCVN MOI',
   },

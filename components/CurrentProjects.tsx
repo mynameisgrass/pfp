@@ -12,6 +12,12 @@ const workingProjects = [
     descriptionEn: 'Casio hacking utilities / calculator',
     descriptionVi: 'Bo cong cu hack Casio / may tinh',
   },
+  {
+    name: 'vnmap-safeschool.net',
+    url: 'vnmap-safeschool.net',
+    descriptionEn: 'New Vietnamese map',
+    descriptionVi: 'BDHCVN MOI',
+  },
 ]
 
 export default function CurrentProjects({ lang }: CurrentProjectsProps) {

@@ -13,6 +13,18 @@ const workingProjects = [
     descriptionVi: 'Bo cong cu hack Casio / may tinh',
   },
   {
+    name: 'calc.grassist.me',
+    url: 'https://calc.grassist.me',
+    descriptionEn: 'Universal calculator for quick everyday calculations',
+    descriptionVi: 'May tinh da nang cho cac phep tinh nhanh',
+  },
+  {
+    name: 'sgame.grassist.me',
+    url: 'https://sgame.grassist.me',
+    descriptionEn: 'A bunch of static games in one place',
+    descriptionVi: 'Bo suu tap nhieu game tinh',
+  },
+  {
     name: 'vnmap-safeschool.net',
     url: 'https://vnmap-safeschool.net',
     descriptionEn: 'New Vietnamese map',

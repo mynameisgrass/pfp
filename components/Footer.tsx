@@ -98,33 +98,33 @@ export default function Footer({ lang }: FooterProps) {
   }
 
   return (
-    <footer className="relative border-t border-primary/20 py-12 px-6 mt-20">
+    <footer className="relative border-t border-emerald-400/50 py-12 px-6 mt-20 bg-gradient-to-b from-white to-emerald-100">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-nature/70 mb-4">
-          {lang === 'vi' ? 'Tao boi' : 'Crafted by'} <span className="text-primary font-bold">_woospiegrassy_</span>
+        <p className="text-black/80 mb-4 font-medium">
+          {lang === 'vi' ? 'Tao boi' : 'Crafted by'} <span className="text-emerald-800 font-bold">_woospiegrassy_</span>
         </p>
-        <p className="text-sm text-nature/50">
+        <p className="text-sm text-black/70">
           {lang === 'vi'
               ? `© ${currentYear} woospiegrassy. Bảo lưu mọi quyền. | Xây dựng với React, Next.js & Tailwind CSS`
             : `© ${currentYear} woospiegrassy. All rights reserved. | Made with React, Next.js & Tailwind CSS`}
         </p>
         <div className="mt-6 flex justify-center gap-6">
-          <a href="https://github.com/mynameisgrass" target="_blank" rel="noopener noreferrer" className="text-nature/70 hover:text-secondary transition-colors">
+          <a href="https://github.com/mynameisgrass" target="_blank" rel="noopener noreferrer" className="text-emerald-900/85 hover:text-emerald-700 transition-colors font-medium">
             GitHub
           </a>
-          <a href="https://discord.com/users/1113641373975990383" target="_blank" rel="noopener noreferrer" className="text-nature/70 hover:text-secondary transition-colors">
+          <a href="https://discord.com/users/1113641373975990383" target="_blank" rel="noopener noreferrer" className="text-emerald-900/85 hover:text-emerald-700 transition-colors font-medium">
             Discord
           </a>
-          <a href="mailto:hailongn789@gmail.com" className="text-nature/70 hover:text-secondary transition-colors">
+          <a href="mailto:hailongn789@gmail.com" className="text-emerald-900/85 hover:text-emerald-700 transition-colors font-medium">
             Email
           </a>
         </div>
 
-        <div className="mt-8 rounded-xl border border-primary/20 bg-black/20 p-5 text-left">
-          <h3 className="text-lg font-bold text-primary text-center mb-2">
+        <div className="mt-8 rounded-xl border border-emerald-500/50 bg-gradient-to-br from-white to-emerald-100 p-5 text-left shadow-lg shadow-emerald-200/50">
+          <h3 className="text-lg font-bold text-emerald-900 text-center mb-2">
             {lang === 'vi' ? 'Ung ho / Donation' : 'Donation'}
           </h3>
-          <p className="text-sm text-nature/70 text-center mb-4">
+          <p className="text-sm text-black/70 text-center mb-4">
             {lang === 'vi'
               ? 'Neu ban muon ung ho, hay gui toi mot trong cac dia chi ben duoi.'
               : 'If you want to support my work, you can donate using one of the addresses below.'}
@@ -134,10 +134,10 @@ export default function Footer({ lang }: FooterProps) {
             {donationAddresses.map((wallet) => (
               <div
                 key={wallet.network}
-                className="rounded-lg border border-accent/20 bg-black/25 p-3"
+                className="rounded-lg border border-emerald-300 bg-white/95 p-3"
               >
                 <div className="flex items-start gap-3">
-                  <div className="h-9 w-9 shrink-0 rounded-full border border-primary/40 bg-dark/80 flex items-center justify-center overflow-hidden">
+                  <div className="h-9 w-9 shrink-0 rounded-full border border-emerald-300 bg-emerald-50 flex items-center justify-center overflow-hidden">
                     {wallet.logoUrl && !brokenLogos[wallet.network] ? (
                       <img
                         src={wallet.logoUrl}
@@ -148,19 +148,19 @@ export default function Footer({ lang }: FooterProps) {
                         }}
                       />
                     ) : (
-                      <span className="text-[10px] font-bold text-secondary leading-none">{wallet.logoFallback}</span>
+                      <span className="text-[10px] font-bold text-emerald-800 leading-none">{wallet.logoFallback}</span>
                     )}
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold text-secondary mb-1">{wallet.network}</p>
-                    <p className="text-xs md:text-sm font-mono text-nature/90 break-all">{wallet.address}</p>
+                    <p className="text-sm font-semibold text-emerald-900 mb-1">{wallet.network}</p>
+                    <p className="text-xs md:text-sm font-mono text-black break-all">{wallet.address}</p>
                   </div>
 
                   <button
                     type="button"
                     onClick={() => handleCopy(wallet.network, wallet.address)}
-                    className="shrink-0 rounded-md border border-primary/40 px-3 py-1.5 text-xs text-txthead bg-primary/20 hover:bg-primary/30 transition-colors"
+                    className="shrink-0 rounded-md border border-emerald-500 px-3 py-1.5 text-xs text-white bg-emerald-700 hover:bg-emerald-800 transition-colors font-semibold"
                   >
                     {copiedNetwork === wallet.network
                       ? (lang === 'vi' ? 'Da copy' : 'Copied')

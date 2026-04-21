@@ -134,10 +134,10 @@ export default function Footer({ lang }: FooterProps) {
             {donationAddresses.map((wallet) => (
               <div
                 key={wallet.network}
-                className="rounded-lg border border-primary/30 bg-white/88 p-3"
+                className="card-glow p-4 rounded-lg backdrop-blur-sm hover:bg-white/95 transition-all"
               >
-                <div className="flex items-start gap-3">
-                  <div className="h-9 w-9 shrink-0 rounded-full border border-primary/30 bg-white flex items-center justify-center overflow-hidden">
+                <div className="flex items-center gap-4">
+                  <div className="h-10 w-10 shrink-0 rounded-full border border-primary/30 bg-white flex items-center justify-center overflow-hidden">
                     {wallet.logoUrl && !brokenLogos[wallet.network] ? (
                       <img
                         src={wallet.logoUrl}
@@ -153,7 +153,7 @@ export default function Footer({ lang }: FooterProps) {
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold text-secondary mb-1">{wallet.network}</p>
+                    <p className="font-bold text-primary">{wallet.network}</p>
                     <p className="text-xs md:text-sm font-mono text-nature break-all">{wallet.address}</p>
                   </div>
 

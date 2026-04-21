@@ -20,6 +20,14 @@ export default function Hero({ lang }: HeroProps) {
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-secondary/15 rounded-full filter blur-3xl animate-pulse" />
 
       <div className="relative text-center z-10">
+        <div className="mb-5">
+          <div className="card-glow inline-flex rounded-full px-5 py-2 backdrop-blur-sm">
+            <p className="text-sm md:text-base font-semibold text-nature">
+              Found 4 bugs with high severity in hackenproof, one from NEAR.
+            </p>
+          </div>
+        </div>
+
         <div className="mb-6">
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold gradient-text mb-4 leading-tight">
             {lang === 'vi' ? 'Xin chào, mình là' : 'Hey, I\'m'}

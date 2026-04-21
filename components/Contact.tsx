@@ -74,7 +74,7 @@ export default function Contact({ lang }: ContactProps) {
             {contactLinks.map((item, index) => (
               <div
                 key={index}
-                className="card-glow p-4 rounded-lg backdrop-blur-sm hover:bg-primary/5 transition-all"
+                className="card-glow p-4 rounded-lg backdrop-blur-sm hover:bg-white/95 transition-all"
               >
                 <div className="flex items-center gap-4">
                   <span className="text-3xl">{item.icon}</span>
@@ -141,13 +141,13 @@ export default function Contact({ lang }: ContactProps) {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-dark font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all"
+              className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all"
             >
               {lang === 'vi' ? 'Gửi tin nhắn' : 'Send Message'}
             </button>
 
             {submitted && (
-              <div className="success-message text-center text-green-400 font-semibold">
+              <div className="success-message text-center text-secondary font-semibold">
                 {lang === 'vi' ? '✨ Đã nhận tin! Mình sẽ phản hồi sớm.' : '✨ Message received! I\'ll get back to you soon.'}
               </div>
             )}

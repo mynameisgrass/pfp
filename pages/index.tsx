@@ -50,7 +50,7 @@ export default function Home() {
 
       <div className="relative min-h-screen overflow-hidden">
         <AnimatedBackground />
-        <div className="absolute inset-0 bg-white/35 pointer-events-none" style={{ zIndex: 1 }} />
+        <div className="absolute inset-0 bg-white/25 pointer-events-none" style={{ zIndex: 1 }} />
         
         <Header isScrolled={isScrolled} lang={lang} setLang={setLang} />
         <main className="relative z-10">

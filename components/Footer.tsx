@@ -100,7 +100,7 @@ export default function Footer({ lang }: FooterProps) {
   return (
     <footer className="relative border-t border-primary/35 py-12 px-6 mt-20">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-nature/80 mb-4 font-medium">
+        <p className="text-nature mb-4 font-medium bg-white/85 backdrop-blur-sm rounded-lg px-4 py-3 inline-block">
           {lang === 'vi' ? 'Tao boi' : 'Crafted by'} <span className="text-primary font-bold">_woospiegrassy_</span>
         </p>
         <p className="text-sm text-nature/70">
